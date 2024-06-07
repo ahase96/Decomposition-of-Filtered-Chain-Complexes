@@ -8,9 +8,9 @@ The remaining files in examples are adapted from https://github.com/OpenAppliedT
 
 In order to get, make and run my adaption of Ripser:
 
-'''sh
+```sh
 git clone https://github.com/ahase96/Decomposition-of-Filtered-Chain-Complexes
 cd ripser
 make
 .\ripser examples/test.lower_distance_matrix (or .\ripser examples/cyclo_1000.lower_distance_matrix.csv)
-'''
+```
