@@ -15,7 +15,7 @@ In order to obtain, make and run this adaption of Ripser:
 git clone https://github.com/ahase96/Decomposition-of-Filtered-Chain-Complexes
 cd ripser
 make
-.\ripser examples/test.lower_distance_matrix (or .\ripser examples/cyclo_1000.lower_distance_matrix.csv)
+.\ripser examples/test.lower_distance_matrix
 ```
 
 or alternatively
