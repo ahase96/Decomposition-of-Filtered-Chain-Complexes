@@ -49,7 +49,7 @@
 #define COMPUTE_BOUNDING_CHAINS																			// change: toggle whether to compute bounding chains and boundaries 											
 //#define PRINT_BOUNDING_CHAINS																			// change: toggle to print bounding chains and boundaries
 #define SHORT_CIRCUIT																					// change: toogle to employ short-circuiting
-#define COMPUTE_LARGEST_ONLY																			// change: toogle whether to calculate a single bounding chain and boundary only
+//#define COMPUTE_LARGEST_ONLY																			// change: toogle whether to calculate a single bounding chain and boundary only
 
 //#define USE_ROBINHOOD_HASHMAP
 
@@ -866,8 +866,8 @@ public:
 					} else {
 #ifdef COMPUTE_BOUNDING_CHAINS
 						kappa_heap.push(pivot); 														// change: pushes new kappa into kappa_heap (cf. death index)
-						global_hash.insert({get_index(pivot),column_to_reduce});						// change: inserts new kappa<->rho correspondece into hash map
-						local_hash.insert({get_index(pivot),index_column_to_reduce});					// change: inserts new kappa<->column index of reduction matrix correspondence into hash map
+						global_hash.insert({get_index(pivot), column_to_reduce});						// change: inserts new kappa<->rho correspondece into hash map
+						local_hash.insert({get_index(pivot), index_column_to_reduce});					// change: inserts new kappa<->column index of reduction matrix correspondence into hash map
 #ifdef COMPUTE_LARGEST_ONLY
 						if (get_diameter(pivot)-get_diameter(column_to_reduce)>largestDiam) {			// change: keep track of interval with maximal persistence
 							largestDiam = get_diameter(pivot)-get_diameter(column_to_reduce);
@@ -974,7 +974,7 @@ public:
 					greater_diameter_or_smaller_index_comp<diameter_entry_t>>
 					working_boundary;
 
-				own_fast_coboundary(reduction_matrix,while_rho,local_rho,dim,working_coboundary);	
+				own_fast_coboundary(reduction_matrix, while_rho, local_rho, dim, working_coboundary);	
 
 				pop_pivot(working_coboundary);
 
@@ -990,22 +990,22 @@ public:
 						break;
 					}
 
-					if (solution_hash.find(get_index(e))!=solution_hash.end()) {
+					if (solution_hash.find(get_index(e)) != solution_hash.end()) {
 						solution_scalar.push(for_kappa);
 					}	
 				}
 
 				diameter_entry_t e = pop_pivot(solution_scalar);
 				
-				if (i==j) {
+				if (i == j) {
 					if (get_index(e) == -1) {
 						solution_vector.push(while_kappa);
-						solution_hash.insert({get_index(while_kappa),get_index(for_kappa)});
+						solution_hash.insert({get_index(while_kappa), get_index(for_kappa)});
 					}	
 				} else {
 					if (get_index(e) != -1) {
 						solution_vector.push(while_kappa);
-						solution_hash.insert({get_index(while_kappa),get_index(for_kappa)});
+						solution_hash.insert({get_index(while_kappa), get_index(for_kappa)});
 					}
 				}
 
@@ -1017,11 +1017,11 @@ public:
 
 					diameter_entry_t e = pop_pivot(working_boundary);
 
-					if ((get_index(e)==get_index(for_rho) && get_index(get_pivot(working_boundary))==-1)) {
+					if ((get_index(e) == get_index(for_rho) && get_index(get_pivot(working_boundary)) == -1)) {
 						shortcircuit = true;
 						break;
 					}
-					if (get_index(e)==-1) {
+					if (get_index(e) == -1) {
 						break;
 					}
 					
@@ -1033,7 +1033,7 @@ public:
 					break;
 				}		
 
-				i=i-1;
+				i = i-1;
 
 			}
 
