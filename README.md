@@ -7,7 +7,7 @@ The files in the repository are taken or adapted from the following sources:
 - sphere_3_192 and rp2_600, in the folder examples, are taken from https://github.com/Ripser/ripser and no changes were made.
 - The remaining files in the folder examples are adapted from https://github.com/OpenAppliedTopology/Umatch_paper and modified in the sense of formatting only.
 
-Computational Decomposition of Filtered Chain Complexes_final contains LaTeX code of the bachelor's thesis.
+Computational Decomposition of Filtered Chain Complexes.zip contains LaTeX code of the bachelor's thesis. Computational Decomposition of Filtered Chain Complexes.pdf contains the bachelor's thesis as a pdf-file.
 
 In order to obtain, make and run this adaption of Ripser:
 
