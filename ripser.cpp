@@ -43,13 +43,13 @@
 //#define USE_COEFFICIENTS
 
 //#define INDICATE_PROGRESS
-//#define PRINT_PERSISTENCE_PAIRS 																		// change: commented out
+#define PRINT_PERSISTENCE_PAIRS 																		// change: commented out
 #define SPEED_UP																						// change: only calculate bounding chains related to intervals of positive persistence
 #define SPEED_UP_2																						// change: only consider relevant columns for backsubstitution
 #define COMPUTE_BOUNDING_CHAINS																			// change: toggle whether to compute bounding chains and boundaries 											
-//#define PRINT_BOUNDING_CHAINS																			// change: toggle to print bounding chains and boundaries
+#define PRINT_BOUNDING_CHAINS																			// change: toggle to print bounding chains and boundaries
 #define SHORT_CIRCUIT																					// change: toogle to employ short-circuiting
-//#define COMPUTE_LARGEST_ONLY																			// change: toogle whether to calculate a single bounding chain and boundary only
+#define COMPUTE_LARGEST_ONLY																			// change: toogle whether to calculate a single bounding chain and boundary only
 
 //#define USE_ROBINHOOD_HASHMAP
 
@@ -822,7 +822,7 @@ public:
 		     ++index_column_to_reduce) {
 
 			diameter_entry_t column_to_reduce(columns_to_reduce[index_column_to_reduce], 1);
-			//value_t diameter = get_diameter(column_to_reduce);										// change: commented out in order to avoid warnings
+			value_t diameter = get_diameter(column_to_reduce);										// comment out in order to avoid warning if pairs are not printed 
 
 			reduction_matrix.append_column();
 
@@ -877,13 +877,13 @@ public:
 #endif
 #endif
 #ifdef PRINT_PERSISTENCE_PAIRS
-						//value_t death = get_diameter(pivot);											// change: commented out in order to avoid warnings											
+						value_t death = get_diameter(pivot);											// comment out in order to avoid warning if pairs are not printed											
 						if (death > diameter * ratio) {
 #ifdef INDICATE_PROGRESS
 							std::cerr << clear_line << std::flush;
 							
 #endif	
-							//std::cout << " [" << diameter << "," << death << ")" << std::endl;		// change: commented out in order to avoid warnings
+							std::cout << " [" << diameter << "," << death << ")" << std::endl;		// comment out in order to avoid warning if pairs are not printed
 						}
 #endif
 						pivot_column_index.insert({get_entry(pivot), index_column_to_reduce});
