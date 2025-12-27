@@ -2,7 +2,7 @@ This is the repository corresponding to the bachelor's thesis 'Computational Dec
 
 The files in the repository are taken or adapted from the following sources:
 
-- ripser.cpp is adapted from https://github.com/Ripser/ripser and any changes made are explicitely mentioned is said file.
+- ripser.cpp is adapted from https://github.com/Ripser/ripser and any changes made are explicitely mentioned in said file.
 - Makefile is taken from https://github.com/Ripser/ripser and no changes were made.
 - sphere_3_192 and rp2_600, in the folder examples, are taken from https://github.com/Ripser/ripser and no changes were made.
 - The remaining files in the folder examples are adapted from https://github.com/OpenAppliedTopology/Umatch_paper and modified in the sense of formatting only.
